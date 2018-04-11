@@ -1,7 +1,6 @@
 package seferan.macromodules.getslotitemextended.actions;
 
 import seferan.macromodules.getslotitemextended.util.ModuleInfo;
-import net.eq2online.macros.scripting.Variable;
 import net.eq2online.macros.scripting.api.APIVersion;
 import net.eq2online.macros.scripting.api.IMacro;
 import net.eq2online.macros.scripting.api.IMacroAction;
@@ -11,20 +10,15 @@ import net.eq2online.macros.scripting.api.ReturnValue;
 import net.eq2online.macros.scripting.parser.ScriptAction;
 import net.eq2online.macros.scripting.parser.ScriptContext;
 import net.eq2online.macros.scripting.parser.ScriptCore;
-import net.minecraft.client.Minecraft;
+import net.eq2online.util.Game;
 import net.minecraft.item.ItemStack;
 
 @APIVersion(ModuleInfo.API_VERSION)
 public class ScriptActionGetSlotItemExt extends ScriptAction{
 	
-	protected final SlotHelper slotHelper;
-	protected final Minecraft mc;
-	
 	public ScriptActionGetSlotItemExt()
 	{
-		super(ScriptContext.MAIN, "getslotitemext");
-		this.mc = Minecraft.getMinecraft();
-		this.slotHelper = new SlotHelper(this.mc);	
+		super(ScriptContext.MAIN, "getslotitemext");	
 	}
   
 	public void onInit()
